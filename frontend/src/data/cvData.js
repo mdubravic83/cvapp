@@ -38,11 +38,11 @@ export const defaultCvData = {
   // Experience HR
   experience_hr: [
     {
-      dates: "01/01/2021 – danas",
+      dates: "01/01/2021 – 20/8/2025",
       location: "Zagreb, Hrvatska",
       position: "Vlasnica i direktorica, Prevoditeljica, Profesorica, Content writer",
       company: "S.O.S English j.d.o.o.",
-      description: "Osnovala vlastitu tvrtku u kojoj je zaposlena. Tvrtka pruža usluge content marketinga i prevođenja sadržaja s engleskog na hrvatski i obrnuto. Također nudi instrukcije za sve dobne skupine.",
+      description: "Osnovala vlastitu tvrtku i bila zaposlena u istoj. Tvrtka je pružala usluge content marketinga i prevođenja sadržaja s engleskog na hrvatski i obrnuto. Također je nudila instrukcije za sve dobne skupine.",
       sector: "Obrazovanje",
       website: "https://sos-english.hr"
     },
@@ -65,7 +65,7 @@ export const defaultCvData = {
       location: "Lukavac, Bosna i Hercegovina",
       position: "Učiteljica u osnovnoj školi - engleski jezik",
       company: "Osnovna škola \"Turija\"",
-      description: "Rad s djecom svih uzrasta. Kreativna i empatična učiteljica. Radila 1 godinu i 8 mjeseci, položila stažistički ispit."
+      description: "Rad s djecom svih uzrasta. Kreativna i empatična učiteljica. Radila 3 godine, položila stažistički ispit."
     },
     {
       dates: "01/07/2013 – 01/04/2014",
@@ -77,9 +77,9 @@ export const defaultCvData = {
     {
       dates: "2005 – 2008",
       location: "Lukavac, Bosna i Hercegovina",
-      position: "Koordinatorica obrazovnog programa, Predavačica engleskog jezika, Prevoditeljica",
+      position: "Koordinatorica obrazovnog projekta, Predavačica engleskog jezika, Prevoditeljica",
       company: "Volonterski rad",
-      description: "Organiziranje i provođenje tečajeva. Prevođenje dokumenata. Suradnja s lokalnim tijelima vlasti i građanima."
+      description: "Organiziranje i provođenje tečajeva. Prevođenje dokumenata. Suradnja s lokalnim tijelima vlasti i građanima. Suradnja sa Faith Regen Foundation London, nositeljem ovog obrazovnog projekta."
     }
   ],
   
