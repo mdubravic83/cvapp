@@ -1,34 +1,188 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* CV App Styles */
+
+/* Print Styles for Europass PDF */
+@media print {
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  header {
+    position: static !important;
+    background: white !important;
+    backdrop-filter: none !important;
+    border-bottom: 2px solid #0f172a !important;
+  }
+
+  main {
+    padding: 20px !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  .rounded-full {
+    border-radius: 9999px !important;
+  }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
 }
 
-.App-link {
-    color: #61dafb;
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Smooth transitions */
+a,
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Timeline dot animation */
+.border-l-2 > .rounded-full {
+  transition: transform 0.2s ease;
+}
+
+.border-l-2:hover > .rounded-full {
+  transform: scale(1.2);
+}
+
+/* Badge hover effect */
+.bg-slate-50:hover {
+  background-color: #f1f5f9;
+}
+
+/* Card hover effect */
+.border-slate-200 {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.border-slate-200:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Header blur effect enhancement */
+header {
+  transition: background-color 0.2s ease;
+}
+
+/* Language toggle button animation */
+button[data-testid="language-toggle"] {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button[data-testid="language-toggle"]:hover {
+  transform: scale(1.05);
+}
+
+/* Profile image hover effect */
+img[data-testid="profile-image"] {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img[data-testid="profile-image"]:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Section fade-in animation */
+section {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation for experience items */
+[data-testid^="experience-item-"],
+[data-testid^="education-item-"] {
+  animation: slideIn 0.4s ease-out;
+  animation-fill-mode: both;
+}
+
+[data-testid="experience-item-0"],
+[data-testid="education-item-0"] {
+  animation-delay: 0.1s;
+}
+
+[data-testid="experience-item-1"],
+[data-testid="education-item-1"] {
+  animation-delay: 0.2s;
+}
+
+[data-testid="experience-item-2"] {
+  animation-delay: 0.3s;
+}
+
+[data-testid="experience-item-3"] {
+  animation-delay: 0.4s;
+}
+
+[data-testid="experience-item-4"] {
+  animation-delay: 0.5s;
+}
+
+[data-testid="experience-item-5"] {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Skills badges animation */
+[data-testid^="skill-badge-"] {
+  animation: popIn 0.3s ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .font-serif {
+    font-size: 90%;
+  }
 }
