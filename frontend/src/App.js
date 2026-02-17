@@ -36,6 +36,7 @@ function App() {
   const [cvData, setCvData] = useState(defaultCvData);
   const [saving, setSaving] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [sectionOrder, setSectionOrder] = useState(["about", "experience", "education", "custom"]);
   const cvRef = useRef(null);
   const fileInputRef = useRef(null);
 
