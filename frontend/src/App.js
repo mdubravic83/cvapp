@@ -165,21 +165,32 @@ function App() {
     }
 
     try {
+      // Add PDF export class for styling adjustments
+      document.body.classList.add("pdf-exporting");
+      
+      // Wait for class to apply
+      await new Promise(r => setTimeout(r, 100));
+
       const opt = {
-        margin: [10, 10, 10, 10],
+        margin: [8, 5, 8, 5],
         filename: `Mediha_Dubravic_CV_Europass_${language}.pdf`,
-        image: { type: "jpeg", quality: 0.98 },
+        image: { type: "jpeg", quality: 0.95 },
         html2canvas: { 
           scale: 2, 
           useCORS: true,
           allowTaint: true,
-          logging: false
+          logging: false,
+          width: element.scrollWidth,
+          windowWidth: element.scrollWidth
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
         pagebreak: { mode: ["avoid-all", "css", "legacy"] }
       };
       await html2pdf().set(opt).from(element).save();
+      
+      document.body.classList.remove("pdf-exporting");
     } catch (error) {
+      document.body.classList.remove("pdf-exporting");
       console.error("PDF export error:", error);
       // Fallback to backend if available
       if (BACKEND_URL) {
