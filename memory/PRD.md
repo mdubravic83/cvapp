@@ -1,30 +1,21 @@
 # CV App (Europass) - PRD
 
 ## Problem Statement
-Klonirati repo i popraviti PDF export + riješiti produkcijski deployment na Hostingeru (medihacv.finzen.click) koji nema Python backend.
+CV app za Medihu Dubravić. Popraviti PDF export, deployment na Hostinger, i layout PDF-a.
 
 ## Architecture
-- **Frontend**: React.js s Tailwind CSS, shadcn/ui komponente
-- **PDF**: html2pdf.js (client-side, radi bez backend-a)
-- **Data**: localStorage za persistenciju, defaultCvData.js kao fallback
-- **Image Upload**: FileReader API (client-side base64)
-- **Backend**: FastAPI (opcioni fallback za dev okruženje)
-- **Deployment**: Hostinger Startup Cloud (statički frontend only)
+- **Frontend**: React.js + Tailwind CSS + html2pdf.js (fully client-side)
+- **Data**: localStorage + defaultCvData.js fallback
+- **PDF**: html2pdf.js (client-side generacija, radi bez backend-a)
+- **Deployment**: Hostinger Startup Cloud (statički frontend)
 
 ## What's Been Implemented
-- **[Jan 2026]** Bug fix: Instaliran `reportlab`, font fallback
-- **[Jan 2026]** Data update: Svi CV podaci ažurirani sa izvorne Europass stranice
-- **[Jan 2026]** Production fix: `REACT_APP_BACKEND_URL` fallback na `""`
-- **[Jan 2026]** **Client-side konverzija**: 
-  - PDF export → `html2pdf.js` (ne treba backend)
-  - Data save/load → `localStorage` (ne treba MongoDB)
-  - Image upload → `FileReader` API (ne treba backend endpoint)
-  - Backend API pozivi su sada opcioni fallback
+- **[Jan 2026]** Bug fix: reportlab + font fallback
+- **[Jan 2026]** Data update: Svi podaci sa izvorne Europass stranice
+- **[Jan 2026]** Client-side konverzija: html2pdf.js, localStorage, FileReader
+- **[Jan 2026]** PDF layout fix: dvostupčani grid (4fr:8fr), profilna slika 120x120px 1:1 ratio, windowWidth 1100px
 
-## Testiranje
-- Iteracija 1: 100% (PDF bug fix)
-- Iteracija 2: 100% (data update)
-- Iteracija 3: 100% (client-side konverzija)
+## Testiranje: 4 iteracije, sve 100%
 
 ## Backlog
 - P2: QR kod funkcionalnost
