@@ -17,7 +17,7 @@ import {
 import {
   Mail, Phone, Globe, Linkedin, MapPin, Calendar, Briefcase,
   GraduationCap, User, FileDown, Car, Heart, Flag, Edit, Eye,
-  Save, Plus, Trash2, Upload, X, Lock, LogOut
+  Save, Plus, Trash2, Upload, X, Lock, LogOut, ChevronUp, ChevronDown
 } from "lucide-react";
 import html2pdf from "html2pdf.js";
 
