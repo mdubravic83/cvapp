@@ -20,7 +20,7 @@ import {
   Save, Plus, Trash2, Upload, X, Lock, LogOut
 } from "lucide-react";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "";
 
 // Simple hardcoded password - change this to your desired password
 const EDIT_PASSWORD = "mediha2024";
