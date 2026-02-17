@@ -181,7 +181,7 @@ function App() {
           allowTaint: true,
           logging: false,
           width: element.scrollWidth,
-          windowWidth: element.scrollWidth
+          windowWidth: 1200
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
         pagebreak: { mode: ["avoid-all", "css", "legacy"] }
