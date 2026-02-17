@@ -11,7 +11,7 @@ export const defaultCvData = {
   linkedin: "https://www.linkedin.com/in/mediha-dubravi",
   whatsapp: "00385976483495",
   drivingLicense: "B",
-  profileImage: "https://images.unsplash.com/photo-1758685848147-e1e149bf2603?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHBvcnRyYWl0JTIwcHJvZmVzc29yfGVufDB8fHx8MTc3MDA2MDExOXww&ixlib=rb-4.1.0&q=85",
+  profileImage: "/profile.jpeg",
   
   // Language-specific fields
   title_hr: "Magistra edukacije engleskog jezika i književnosti",
