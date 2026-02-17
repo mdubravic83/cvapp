@@ -196,8 +196,8 @@
   /* Section headings */
   .md\:col-span-8 h2 {
     font-size: 14px !important;
-    padding-bottom: 2px !important;
-    margin-bottom: 5px !important;
+    padding-bottom: 1px !important;
+    margin-bottom: 3px !important;
   }
 
   .md\:col-span-8 h2 .w-6 {
