@@ -592,9 +592,7 @@ function App() {
               );
 
               if (sectionKey === "experience") return (
-
-            {/* Experience Section */}
-            <section data-testid="experience-section">
+            <section key="experience" data-testid="experience-section">
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-slate-900 border-b border-slate-200 pb-2 mb-6 flex items-center gap-3">
                 <Briefcase className="w-6 h-6" />{currentLabels.experience}
               </h2>
