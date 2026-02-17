@@ -408,6 +408,18 @@ function App() {
                 </>
               )}
             </div>
+            {/* Education degrees in header */}
+            {!editMode && (cvData[`education_${language.toLowerCase()}`] || []).length > 0 && (
+              <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-3" data-testid="hero-education">
+                {(cvData[`education_${language.toLowerCase()}`] || []).map((edu, i) => (
+                  <span key={i} className="inline-flex items-center gap-1 text-sm text-slate-500">
+                    <GraduationCap className="w-3.5 h-3.5" />
+                    <span>{edu.degree}</span>
+                    {i < (cvData[`education_${language.toLowerCase()}`] || []).length - 1 && <span className="text-slate-300 ml-1">|</span>}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
