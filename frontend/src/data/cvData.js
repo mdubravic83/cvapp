@@ -14,8 +14,8 @@ export const defaultCvData = {
   profileImage: "https://images.unsplash.com/photo-1758685848147-e1e149bf2603?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHBvcnRyYWl0JTIwcHJvZmVzc29yfGVufDB8fHx8MTc3MDA2MDExOXww&ixlib=rb-4.1.0&q=85",
   
   // Language-specific fields
-  title_hr: "Profesorica engleskog jezika i književnosti",
-  title_en: "Professor of English Language and Literature",
+  title_hr: "Magistra edukacije engleskog jezika i književnosti",
+  title_en: "MA of English Language and Literature",
   
   citizenship_hr: "Hrvatsko",
   citizenship_en: "Croatian",
@@ -32,8 +32,8 @@ export const defaultCvData = {
   children_hr: "Majka jedne kćeri",
   children_en: "Mother of one daughter",
   
-  about_hr: "Profesorica engleskog jezika i književnosti s iskustvom u poučavanju, instrukcijama, prevođenju i pisanju raznih sadržaja s engleskog na hrvatski i obrnuto. Samozaposlena posljednjih nekoliko godina u vlastitoj tvrtki S.O.S English, gdje je glavni fokus content marketing. Živi u Zagrebu. Udana i majka jedne kćeri.",
-  about_en: "Professor of English language and literature with experience in teaching, instruction, translation, and writing various content from English to Croatian and vice versa. Self-employed for the past few years in her own company S.O.S English, where the main focus is content marketing. Lives in Zagreb. Married and mother of one daughter.",
+  about_hr: "Magistra engleskog jezika i književnosti s iskustvom u poučavanju, instrukcijama, prevođenju i pisanju raznih sadržaja s engleskog na hrvatski i obrnuto. Samozaposlena posljednjih nekoliko godina u vlastitoj tvrtki S.O.S English, gdje je glavni fokus bio content marketing. Prethodna iskustva: rad u osnovnoj školi, rad u administraciji, te koordinacija edukativnog projekta. Živi u Zagrebu. Udana i majka jedne kćeri.",
+  about_en: "MA of English language and literature with experience in teaching, instruction, translation, and writing various content from English to Croatian and vice versa. Last experience: self-employed in her own company S.O.S English, where content marketing was the main focus. Previously worked as a teacher in primary school, as an administrator, and as a project coordinator. Lives in Zagreb. Married and mother of one daughter.",
   
   // Experience HR
   experience_hr: [
