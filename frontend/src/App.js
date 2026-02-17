@@ -180,8 +180,7 @@ function App() {
           useCORS: true,
           allowTaint: true,
           logging: false,
-          width: element.scrollWidth,
-          windowWidth: 1200
+          windowWidth: 1100
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
         pagebreak: { mode: ["avoid-all", "css", "legacy"] }
