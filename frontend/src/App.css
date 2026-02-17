@@ -87,6 +87,16 @@
     font-size: 9px !important;
   }
 
+  /* Hero education degrees */
+  [data-testid="hero-education"] {
+    margin-top: 2px !important;
+    gap: 4px !important;
+  }
+
+  [data-testid="hero-education"] span {
+    font-size: 8px !important;
+  }
+
   /* ===== TWO-COLUMN GRID ===== */
   #cv-content > .grid {
     display: grid !important;
