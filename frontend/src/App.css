@@ -25,7 +25,8 @@
   [data-testid="export-pdf-btn"],
   [data-testid="language-toggle"],
   [data-testid="edit-toggle"],
-  [data-testid="logout-btn"] {
+  [data-testid="logout-btn"],
+  [data-testid="section-order-controls"] {
     display: none !important;
   }
 
