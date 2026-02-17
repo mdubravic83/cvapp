@@ -638,9 +638,10 @@ function App() {
                 )}
               </div>
             </section>
+              );
 
-            {/* Education Section */}
-            <section data-testid="education-section">
+              if (sectionKey === "education") return (
+            <section key="education" data-testid="education-section">
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-slate-900 border-b border-slate-200 pb-2 mb-6 flex items-center gap-3">
                 <GraduationCap className="w-6 h-6" />{currentLabels.education}
               </h2>
