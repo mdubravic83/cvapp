@@ -156,29 +156,53 @@ function App() {
     }
   };
 
-  // Export PDF
+  // Export PDF (client-side using html2pdf.js, fallback to backend)
   const handleExportPDF = async () => {
+    const element = document.getElementById("cv-content");
+    if (!element) {
+      window.print();
+      return;
+    }
+
     try {
-      const response = await fetch(`${BACKEND_URL}/api/export-pdf`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ language, cvData: localizedData }),
-      });
-      if (response.ok) {
-        const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `Mediha_Dubravic_CV_Europass_${language}.pdf`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
-      } else {
-        window.print();
-      }
+      const opt = {
+        margin: [10, 10, 10, 10],
+        filename: `Mediha_Dubravic_CV_Europass_${language}.pdf`,
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { 
+          scale: 2, 
+          useCORS: true,
+          allowTaint: true,
+          logging: false
+        },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        pagebreak: { mode: ["avoid-all", "css", "legacy"] }
+      };
+      await html2pdf().set(opt).from(element).save();
     } catch (error) {
       console.error("PDF export error:", error);
+      // Fallback to backend if available
+      if (BACKEND_URL) {
+        try {
+          const response = await fetch(`${BACKEND_URL}/api/export-pdf`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ language, cvData: localizedData }),
+          });
+          if (response.ok) {
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `Mediha_Dubravic_CV_Europass_${language}.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            return;
+          }
+        } catch (e) { /* ignore */ }
+      }
       window.print();
     }
   };
