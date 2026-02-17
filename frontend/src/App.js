@@ -112,18 +112,25 @@ function App() {
   const localizedData = getLocalizedData(cvData, language);
   const currentLabels = labels[language];
 
-  // Save CV data
+  // Save CV data to localStorage (and backend if available)
   const handleSave = async () => {
     setSaving(true);
     try {
-      const response = await fetch(`${BACKEND_URL}/api/cv-data`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(cvData),
-      });
-      if (response.ok) {
-        setEditMode(false);
+      // Always save to localStorage
+      localStorage.setItem("cv_data", JSON.stringify(cvData));
+      // Also try backend if available
+      if (BACKEND_URL) {
+        try {
+          await fetch(`${BACKEND_URL}/api/cv-data`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(cvData),
+          });
+        } catch (e) {
+          // Backend not available, localStorage save is enough
+        }
       }
+      setEditMode(false);
     } catch (error) {
       console.error("Save error:", error);
     } finally {
