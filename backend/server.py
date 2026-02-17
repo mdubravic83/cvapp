@@ -171,7 +171,7 @@ async def export_pdf(request: PDFExportRequest):
         font_path = "/usr/share/fonts/truetype/dejavu/"
         pdfmetrics.registerFont(TTFont('DejaVu', font_path + 'DejaVuSans.ttf'))
         pdfmetrics.registerFont(TTFont('DejaVu-Bold', font_path + 'DejaVuSans-Bold.ttf'))
-        pdfmetrics.registerFont(TTFont('DejaVu-Italic', font_path + 'DejaVuSans-Oblique.ttf'))
+        pdfmetrics.registerFont(TTFont('DejaVu-Italic', font_path + 'DejaVuSans.ttf'))
         pdfmetrics.registerFont(TTFont('DejaVuSerif', font_path + 'DejaVuSerif.ttf'))
         pdfmetrics.registerFont(TTFont('DejaVuSerif-Bold', font_path + 'DejaVuSerif-Bold.ttf'))
         
