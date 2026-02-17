@@ -19,6 +19,7 @@ import {
   GraduationCap, User, FileDown, Car, Heart, Flag, Edit, Eye,
   Save, Plus, Trash2, Upload, X, Lock, LogOut
 } from "lucide-react";
+import html2pdf from "html2pdf.js";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "";
 
