@@ -86,11 +86,11 @@ export const defaultCvData = {
   // Experience EN
   experience_en: [
     {
-      dates: "01/01/2021 – present",
+      dates: "01/01/2021 – 20/08/2025",
       location: "Zagreb, Croatia",
       position: "Owner and Director, Translator, Professor, Content Writer",
       company: "S.O.S English j.d.o.o.",
-      description: "Founded her own company where she is employed. The company provides content marketing services and translation of content from English to Croatian and vice versa. Also offers tutoring for all age groups.",
+      description: "Founded her own company where she was employed. The company provided content marketing services and translation of content from English to Croatian and vice versa. Also offered tutoring for all age groups.",
       sector: "Education",
       website: "https://sos-english.hr"
     },
@@ -113,7 +113,7 @@ export const defaultCvData = {
       location: "Lukavac, Bosnia and Herzegovina",
       position: "Primary School Teacher - English Language",
       company: "Primary School \"Turija\"",
-      description: "Worked with children of all ages. Creative and empathetic teacher. Worked for 1 year and 8 months, completed the probationary exam."
+      description: "Worked with children of all ages. Creative and empathetic teacher. Worked for 3 years, completed the probationary exam."
     },
     {
       dates: "01/07/2013 – 01/04/2014",
@@ -125,9 +125,9 @@ export const defaultCvData = {
     {
       dates: "2005 – 2008",
       location: "Lukavac, Bosnia and Herzegovina",
-      position: "Educational Program Coordinator, English Language Lecturer, Translator",
+      position: "Educational Project Coordinator, English Language Lecturer, Translator",
       company: "Volunteer Work",
-      description: "Organizing and conducting courses. Translating documents. Collaboration with local government bodies and citizens."
+      description: "Organizing and conducting courses. Translating documents. Collaboration with local government bodies and citizens. Collaboration with Faith Regen Foundation London, the holder of this educational project."
     }
   ],
   
