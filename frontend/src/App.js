@@ -47,15 +47,26 @@ function App() {
     }
   }, []);
 
-  // Load CV data from backend
+  // Load CV data from localStorage first, then try backend
   useEffect(() => {
     const loadCvData = async () => {
       try {
-        const response = await fetch(`${BACKEND_URL}/api/cv-data`);
-        if (response.ok) {
-          const data = await response.json();
-          if (data) {
-            setCvData({ ...defaultCvData, ...data });
+        // First try localStorage
+        const savedData = localStorage.getItem("cv_data");
+        if (savedData) {
+          const parsed = JSON.parse(savedData);
+          setCvData({ ...defaultCvData, ...parsed });
+          setLoading(false);
+          return;
+        }
+        // Then try backend (for Emergent/dev environment)
+        if (BACKEND_URL) {
+          const response = await fetch(`${BACKEND_URL}/api/cv-data`);
+          if (response.ok) {
+            const data = await response.json();
+            if (data) {
+              setCvData({ ...defaultCvData, ...data });
+            }
           }
         }
       } catch (error) {
