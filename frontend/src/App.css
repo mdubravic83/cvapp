@@ -330,13 +330,13 @@ section {
   margin-top: 3px !important;
 }
 
-/* Right column - reduce spacing */
+/* Right column - reduce spacing between sections */
 .pdf-exporting .md\:col-span-8 .space-y-12 > * + * {
-  margin-top: 16px !important;
+  margin-top: 10px !important;
 }
 
 .pdf-exporting .md\:col-span-8 .space-y-8 > * + * {
-  margin-top: 12px !important;
+  margin-top: 8px !important;
 }
 
 /* Section headings compact */
