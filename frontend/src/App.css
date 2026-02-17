@@ -186,3 +186,13 @@ section {
     font-size: 90%;
   }
 }
+
+/* PDF Export - hide non-content elements during capture */
+.pdf-exporting header,
+.pdf-exporting footer,
+.pdf-exporting [data-testid="export-pdf-btn"],
+.pdf-exporting [data-testid="language-toggle"],
+.pdf-exporting [data-testid="edit-toggle"],
+.pdf-exporting [data-testid="logout-btn"] {
+  display: none !important;
+}
