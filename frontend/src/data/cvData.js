@@ -190,7 +190,8 @@ export const defaultCvData = {
     "SEO optimizacija",
     "Blog pisanje",
     "Komunikacijske vještine",
-    "Organizacija događanja"
+    "Organizacija događanja",
+    "Koordiniranje projekta"
   ],
   skills_en: [
     "Content Marketing",
@@ -201,7 +202,8 @@ export const defaultCvData = {
     "SEO Optimization",
     "Blog Writing",
     "Communication Skills",
-    "Event Organization"
+    "Event Organization",
+    "Project coordination"
   ],
   
   // Custom Sections (empty by default)
