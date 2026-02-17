@@ -391,11 +391,23 @@ section {
   font-size: 0.8rem !important;
 }
 
-/* Page break hints */
-.pdf-exporting [data-testid^="experience-item"],
+/* Page break hints - only avoid breaking INSIDE single items, not entire sections */
 .pdf-exporting [data-testid^="education-item"] {
   page-break-inside: avoid !important;
   break-inside: avoid !important;
+}
+
+/* Allow experience items to break across pages */
+.pdf-exporting [data-testid^="experience-item"] {
+  page-break-inside: auto !important;
+  break-inside: auto !important;
+}
+
+/* Prevent section headers from being orphaned at bottom of page */
+.pdf-exporting [data-testid="experience-section"] h2,
+.pdf-exporting [data-testid="education-section"] h2 {
+  page-break-after: avoid !important;
+  break-after: avoid !important;
 }
 
 /* Separator thinner */
