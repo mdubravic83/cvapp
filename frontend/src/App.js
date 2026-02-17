@@ -685,8 +685,10 @@ function App() {
                 )}
               </div>
             </section>
+              );
 
-            {/* Custom Sections */}
+              if (sectionKey === "custom") return (
+            <div key="custom">
             {(cvData.customSections || []).map((section, i) => (
               <section key={section.id || i} data-testid={`custom-section-${i}`}>
                 {editMode ? (
@@ -710,10 +712,15 @@ function App() {
 
             {/* Add Custom Section Button */}
             {editMode && (
-              <Button variant="outline" onClick={addCustomSection} className="w-full border-dashed" data-testid="add-section-btn">
+              <Button variant="outline" onClick={addCustomSection} className="w-full border-dashed mt-4" data-testid="add-section-btn">
                 <Plus className="w-4 h-4 mr-2" />{currentLabels.addSection}
               </Button>
             )}
+            </div>
+              );
+
+              return null;
+            })}
           </div>
         </div>
       </main>
