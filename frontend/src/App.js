@@ -114,6 +114,26 @@ function App() {
     }
   };
 
+  // Move section up or down in order
+  const moveSection = (sectionKey, direction) => {
+    setSectionOrder(prev => {
+      const idx = prev.indexOf(sectionKey);
+      if (idx === -1) return prev;
+      const newIdx = idx + direction;
+      if (newIdx < 0 || newIdx >= prev.length) return prev;
+      const newOrder = [...prev];
+      [newOrder[idx], newOrder[newIdx]] = [newOrder[newIdx], newOrder[idx]];
+      return newOrder;
+    });
+  };
+
+  const sectionLabels = {
+    about: language === "HR" ? "O meni" : "About Me",
+    experience: language === "HR" ? "Radno iskustvo" : "Work Experience",
+    education: language === "HR" ? "Obrazovanje" : "Education",
+    custom: language === "HR" ? "Prilagođene sekcije" : "Custom Sections"
+  };
+
   // Get localized data
   const localizedData = getLocalizedData(cvData, language);
   const currentLabels = labels[language];
