@@ -52,6 +52,11 @@ function App() {
   useEffect(() => {
     const loadCvData = async () => {
       try {
+        // Load section order
+        const savedOrder = localStorage.getItem("cv_section_order");
+        if (savedOrder) {
+          setSectionOrder(JSON.parse(savedOrder));
+        }
         // First try localStorage
         const savedData = localStorage.getItem("cv_data");
         if (savedData) {
