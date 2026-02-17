@@ -196,3 +196,41 @@ section {
 .pdf-exporting [data-testid="logout-btn"] {
   display: none !important;
 }
+
+/* Fix layout for PDF capture */
+.pdf-exporting #cv-content {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.pdf-exporting #cv-content .grid {
+  display: grid !important;
+  grid-template-columns: 1fr 2fr !important;
+  gap: 24px !important;
+}
+
+/* Fix profile image aspect ratio in PDF */
+.pdf-exporting img[data-testid="profile-image"] {
+  width: 160px !important;
+  height: 160px !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+}
+
+/* Ensure text doesn't overflow in PDF */
+.pdf-exporting .break-all {
+  word-break: break-word !important;
+}
+
+.pdf-exporting aside {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.pdf-exporting aside .text-sm,
+.pdf-exporting aside span,
+.pdf-exporting aside a {
+  font-size: 0.8rem !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
