@@ -93,6 +93,14 @@
     gap: 14px !important;
   }
 
+  #cv-content > .grid > aside {
+    grid-column: 1 !important;
+  }
+
+  #cv-content > .grid > aside + div {
+    grid-column: 2 !important;
+  }
+
   /* Left sidebar */
   #cv-content > .grid > aside {
     border-right: 1px solid #cbd5e1 !important;
