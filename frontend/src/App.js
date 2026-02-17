@@ -548,15 +548,50 @@ function App() {
 
           {/* Right Column */}
           <div className="md:col-span-8 space-y-12">
-            {/* About Section */}
-            <section data-testid="about-section">
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-slate-900 border-b border-slate-200 pb-2 mb-6">{currentLabels.about}</h2>
-              {editMode ? (
-                <Textarea value={cvData[`about_${language.toLowerCase()}`]} onChange={(e) => updateField(`about_${language.toLowerCase()}`, e.target.value)} className="min-h-[120px]" placeholder={currentLabels.about} data-testid="edit-about" />
-              ) : (
-                <p className="text-slate-600 leading-relaxed text-base">{localizedData.about}</p>
-              )}
-            </section>
+            {/* Section Order Controls (Edit Mode) */}
+            {editMode && (
+              <div className="bg-slate-50 rounded-lg p-4 border border-dashed border-slate-300" data-testid="section-order-controls">
+                <h3 className="text-sm font-semibold text-slate-700 mb-3">{language === "HR" ? "Redoslijed sekcija" : "Section Order"}</h3>
+                <div className="space-y-2">
+                  {sectionOrder.map((key, idx) => (
+                    <div key={key} className="flex items-center gap-2 bg-white rounded px-3 py-2 border border-slate-200">
+                      <span className="text-sm font-medium text-slate-700 flex-1">{sectionLabels[key]}</span>
+                      <button
+                        onClick={() => moveSection(key, -1)}
+                        disabled={idx === 0}
+                        className="p-1 rounded hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed"
+                        data-testid={`move-up-${key}`}
+                      >
+                        <ChevronUp className="w-4 h-4 text-slate-600" />
+                      </button>
+                      <button
+                        onClick={() => moveSection(key, 1)}
+                        disabled={idx === sectionOrder.length - 1}
+                        className="p-1 rounded hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed"
+                        data-testid={`move-down-${key}`}
+                      >
+                        <ChevronDown className="w-4 h-4 text-slate-600" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Dynamic Sections */}
+            {sectionOrder.map((sectionKey) => {
+              if (sectionKey === "about") return (
+                <section key="about" data-testid="about-section">
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-slate-900 border-b border-slate-200 pb-2 mb-6">{currentLabels.about}</h2>
+                  {editMode ? (
+                    <Textarea value={cvData[`about_${language.toLowerCase()}`]} onChange={(e) => updateField(`about_${language.toLowerCase()}`, e.target.value)} className="min-h-[120px]" placeholder={currentLabels.about} data-testid="edit-about" />
+                  ) : (
+                    <p className="text-slate-600 leading-relaxed text-base">{localizedData.about}</p>
+                  )}
+                </section>
+              );
+
+              if (sectionKey === "experience") return (
 
             {/* Experience Section */}
             <section data-testid="experience-section">
