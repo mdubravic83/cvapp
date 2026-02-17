@@ -197,40 +197,61 @@ section {
   display: none !important;
 }
 
-/* Fix layout for PDF capture */
+/* Fix layout for PDF capture - force two-column grid */
 .pdf-exporting #cv-content {
   max-width: 100% !important;
-  padding: 0 !important;
+  padding: 16px !important;
+  width: 100% !important;
 }
 
-.pdf-exporting #cv-content .grid {
+.pdf-exporting #cv-content > .grid {
   display: grid !important;
-  grid-template-columns: 1fr 2fr !important;
-  gap: 24px !important;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr) !important;
+  gap: 32px !important;
+}
+
+.pdf-exporting #cv-content > .grid > aside {
+  grid-column: span 1 !important;
+  min-width: 0 !important;
+}
+
+.pdf-exporting #cv-content > .grid > div {
+  grid-column: span 1 !important;
+  min-width: 0 !important;
 }
 
 /* Fix profile image aspect ratio in PDF */
+.pdf-exporting [data-testid="hero-section"] {
+  flex-direction: row !important;
+  align-items: flex-start !important;
+}
+
 .pdf-exporting img[data-testid="profile-image"] {
   width: 160px !important;
   height: 160px !important;
+  min-width: 160px !important;
+  min-height: 160px !important;
   aspect-ratio: 1 / 1 !important;
   object-fit: cover !important;
+  border-radius: 9999px !important;
 }
 
-/* Ensure text doesn't overflow in PDF */
-.pdf-exporting .break-all {
+.pdf-exporting [data-testid="hero-section"] > div:last-child {
+  text-align: left !important;
+}
+
+.pdf-exporting [data-testid="hero-section"] .flex-wrap {
+  justify-content: flex-start !important;
+}
+
+/* Ensure text doesn't overflow in PDF sidebar */
+.pdf-exporting aside * {
   word-break: break-word !important;
-}
-
-.pdf-exporting aside {
-  min-width: 0 !important;
-  overflow: hidden !important;
+  overflow-wrap: break-word !important;
 }
 
 .pdf-exporting aside .text-sm,
 .pdf-exporting aside span,
 .pdf-exporting aside a {
   font-size: 0.8rem !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
 }
