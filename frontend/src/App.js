@@ -138,23 +138,19 @@ function App() {
     }
   };
 
-  // Handle image upload
+  // Handle image upload (client-side using FileReader)
   const handleImageUpload = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
     
-    const formData = new FormData();
-    formData.append("file", file);
-    
     try {
-      const response = await fetch(`${BACKEND_URL}/api/upload-image`, {
-        method: "POST",
-        body: formData,
-      });
-      const result = await response.json();
-      if (result.success) {
-        setCvData(prev => ({ ...prev, profileImage: result.imageUrl }));
-      }
+      // Read file as base64 directly in browser
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const dataUrl = event.target.result;
+        setCvData(prev => ({ ...prev, profileImage: dataUrl }));
+      };
+      reader.readAsDataURL(file);
     } catch (error) {
       console.error("Upload error:", error);
     }
