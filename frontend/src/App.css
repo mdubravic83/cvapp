@@ -229,18 +229,19 @@ section {
 
 .pdf-exporting [data-testid="hero-section"] > div:first-child {
   flex-shrink: 0 !important;
-  width: 140px !important;
-  height: 140px !important;
+  width: 120px !important;
+  height: 120px !important;
+  min-width: 120px !important;
+  overflow: visible !important;
 }
 
 .pdf-exporting img[data-testid="profile-image"] {
-  width: 140px !important;
-  height: 140px !important;
-  min-width: 140px !important;
-  min-height: 140px !important;
-  max-width: 140px !important;
-  max-height: 140px !important;
-  aspect-ratio: 1 / 1 !important;
+  width: 120px !important;
+  height: 120px !important;
+  min-width: 120px !important;
+  min-height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
   object-fit: cover !important;
   border-radius: 9999px !important;
 }
