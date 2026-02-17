@@ -124,6 +124,7 @@ function App() {
     try {
       // Always save to localStorage
       localStorage.setItem("cv_data", JSON.stringify(cvData));
+      localStorage.setItem("cv_section_order", JSON.stringify(sectionOrder));
       // Also try backend if available
       if (BACKEND_URL) {
         try {
