@@ -399,6 +399,7 @@ function App() {
               src={cvData.profileImage || defaultCvData.profileImage}
               alt={cvData.name}
               className="w-48 h-48 rounded-full object-cover border-4 border-slate-100 shadow-lg"
+              style={{ aspectRatio: "1 / 1" }}
               data-testid="profile-image"
             />
             {editMode && (
